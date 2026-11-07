@@ -1,0 +1,31 @@
+Case ID,Type,Issue,Category,Severity,Decision,Recommended action
+IMG-001,Image,Correct auto-rickshaw label and box,No issue,None,Approve,No correction required
+IMG-002,Image,Visible pedestrian omitted,Missing annotation,Major,Return,Add person annotation if visibility threshold is met
+IMG-003,Image,Motorcycle labeled bicycle,Labeling error,Major,Return,Change class to motorcycle
+IMG-004,Image,Car box includes excessive road and sign,Bounding box error,Major,Return,Redraw box around visible car
+IMG-005,Image,Two boxes represent same parked car,Duplicate annotation,Minor,Return,Remove duplicate box
+IMG-006,Image,Partially occluded bus follows stated rule,No issue,None,Approve,No correction required
+IMG-007,Image,Blurred shape guessed as dog,Ambiguity,Major,Escalate,Use approved unclear rule or ask QA Lead
+IMG-008,Image,Bicycle class and box are correct,No issue,None,Approve,No correction required
+IMG-009,Image,Pedestrian at image edge omitted,Missing annotation,Major,Return,Check edge visibility threshold and annotate if in scope
+IMG-010,Image,Van class absent from supplied taxonomy,Guideline gap,Major,Escalate,Ask taxonomy owner for approved mapping
+IMG-011,Image,Traffic sign class and metadata correct,No issue,None,Approve,No correction required
+IMG-012,Image,Blue sign assigned red attribute,Attribute error,Minor,Return,Correct attribute using source evidence
+IMG-013,Image,One car represented by two IDs,Duplicate annotation,Major,Return,Retain one valid instance
+IMG-014,Image,Distant object cannot be confidently identified,Ambiguity,Major,Escalate,Use approved ignore rule or seek clarification
+IMG-015,Image,Van mapped to car despite hypothetical fallback rule,Labeling error,Major,Return,Apply documented mapping consistently
+VID-001,Video,Same car changes ID 12 to 19 without leaving scene,Tracking error,Major,Return,Maintain one consistent track ID
+VID-002,Video,Event starts after first qualifying frame,Timestamp error,Major,Return,Adjust start to first qualifying frame
+VID-003,Video,Vehicle tracked consistently,No issue,None,Approve,No correction required
+VID-004,Video,Track breaks during short occlusion,Tracking error,Major,Return,Review continuity rule and restore identity if appropriate
+VID-005,Video,Two simultaneous cars share one ID,Tracking error,Critical,Return,Assign unique IDs and inspect interval
+VID-006,Video,Action label inferred from one frame only,Action/event error,Major,Return,Review full clip and correct event interval
+VID-007,Video,Vehicle track and timestamps correct,No issue,None,Approve,No correction required
+VID-008,Video,ID reused for a different visible car,Tracking error,Critical,Return,Assign a unique ID
+VID-009,Video,Sampled frames do not establish event interval,Ambiguity,Major,Escalate,Inspect full clip and escalate unresolved boundary
+VID-010,Video,Person class and track identity are correct,No issue,None,Approve,No correction required
+VID-011,Video,Event end extends beyond last qualifying frame,Timestamp error,Major,Return,Adjust end to last qualifying frame
+VID-012,Video,Visible in-scope vehicle missing from frames,Missing annotation,Major,Return,Add missing frame annotations
+VID-013,Video,Track identity maintained through allowed occlusion,No issue,None,Approve,No correction required
+VID-014,Video,Timestamp format does not match required schema,Metadata/format error,Minor,Return,Convert to required timestamp format
+VID-015,Video,Continuity rule for brief gap is undefined,Guideline gap,Major,Escalate,Ask QA Lead for continuity ruling
